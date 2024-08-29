@@ -1,5 +1,5 @@
 name: 'GitHub Action VPN'
-author: 'd4ark'
+author: 'candrairwn'
 description: 'Establish L2TP.'
 inputs:
   VPN_USER:
@@ -18,5 +18,5 @@ runs:
   using: "composite"
   steps:
     - name: vpn-l2tp
-      run: scripts/l2tp.sh
+      run: l2tp.sh
       shell: bash
