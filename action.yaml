@@ -1,0 +1,22 @@
+name: 'GitHub Action VPN'
+author: 'd4ark'
+description: 'Establish L2TP.'
+inputs:
+  VPN_USER:
+    description: 'Username for VPN connection.'
+    required: true
+  VPN_PASSWORD:
+    description: 'Password for VPN connection.'
+    required: true
+  VPN_SERVER:
+    description: 'Host name or IP address of VPN server.'
+    required: true
+  VPN_PSK:
+    description: 'Shared secret key for VPN connection. Required for L2TP.'
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - name: vpn-l2tp
+      run: scripts/l2tp.sh
+      shell: bash
